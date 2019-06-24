@@ -9,25 +9,6 @@ GBPrinter gbprinter(GB_In, GB_Out, GB_Clk);
 
 void setup() {
 	Serial.begin(57600);
-	//Serial.println("Gameboy Printer Test\n----------------------");
-	/*
-	 for(int i=0;i<640;i++){
-	 gb_buffer[i] = img[i];
-	 }*/
-	/*for (int i = 0; i < 40; i++) {
-	 for(int j=0;j<16;j++){
-	 uint8_t c = gb_buffer[i*16+j];
-	 if(c<16){
-	 Serial.print("0");
-	 }
-	 Serial.print(c,HEX);
-	 Serial.print(" ");
-	 }
-	 Serial.println();
-	 }
-	 */
-	//gbprinter.flushBuffer();
-	//gbprinter.printTest();
 }
 
 void loop() {
@@ -87,4 +68,14 @@ void loop() {
 			}
 		}
 	}
+}
+
+void test(){
+	Serial.println("Gameboy Printer Test\n");
+	
+	for(int i=0;i<640;i++){
+		gb_buffer[i] = img[i];
+	}
+	gbprinter.flushBuffer();
+	gbprinter.printTest();
 }

@@ -195,7 +195,7 @@ bool GBPrinter::sendPrint(uint8_t leftMargin, uint8_t rightMargin,
  * Sends a print command to the GameBoy Printer using default palette and exposure settings.
  * Before the print command is sent, 640 bytes of image data need to be transferred.
  * 	leftMargin ... empty space before the print
- * 	rightMArgin .. empty space after the print
+ * 	rightMargin .. empty space after the print
  */
 bool GBPrinter::sendPrint(uint8_t leftMargin, uint8_t rightMargin) {
 	return sendPrint(leftMargin, rightMargin, GB_PALETTE_DEFAULT,

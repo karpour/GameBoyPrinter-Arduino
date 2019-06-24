@@ -46,7 +46,7 @@ public:
 	// Constructor
 	GBPrinter(int in_pin, int out_pin, int clk_pin);
 
-	// low-level write
+	// Low-level write methods
 	uint8_t writeByte(uint8_t command);
 	void sendSync();
 	void sendHeader(uint8_t commandCode, uint8_t compressionIndicator, uint16_t bodyLength);
