@@ -36,7 +36,7 @@ void loop() {
 					Serial.write('1'); // Send ack
 					gbprinter.printCharacter('\n');
 					break;
-				case 'Z': // Print page end, followed by one ascii numeral indicating how many blank lines to print
+				case 'Z': // Print page end, followed by one byte indicating how many blank lines to print
 					Serial.write('1'); // Send ack
 					while (Serial.available() == 0){}
 					gbprinter.printBlank(Serial.read());
