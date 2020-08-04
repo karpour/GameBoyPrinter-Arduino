@@ -26,9 +26,11 @@ for (int i = 0; i < 640; i++) {
 }
 gbprinter.flushBuffer();
 ```
+
 Flushing the buffer in this library automatically prints the buffer contents. The GameBoy printer supports buffering multiple bands of image data, in case this is required it can be achieved by using lower-level methods.
 
 ## Printing characters
+
 The library supports printing characters. These are written into the image buffer. Once the end of the buffer is reached, the buffer is flushed and emptied.
 For immediately printing the text, call flushBuffer()
 

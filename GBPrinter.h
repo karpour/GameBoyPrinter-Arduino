@@ -17,6 +17,7 @@ void setup();
 #define GB_CMD_PRINT			0x02
 #define GB_CMD_INQUIRY			0x0F
 
+/** Default Palette **/
 #define GB_PALETTE_DEFAULT		0xE4
 #define GB_PALETTE_INVERTED		0x1B
 
@@ -36,10 +37,11 @@ void setup();
 #define GB_EXPOSURE_DEFAULT		0x40 // 64
 #define GB_EXPOSURE_MAX			0x7F // 127
 
-#define delayMs 20 // between 20 and 60ms
+// TODO rename to delayUs
+#define delayMs 20 // between 20 and 60us
 
 extern uint8_t gb_buffer[640];
-extern const unsigned char img[640] PROGMEM;
+//extern const unsigned char img[640] PROGMEM;
 
 class GBPrinter {
 public:
@@ -53,7 +55,7 @@ public:
 	void sendChecksum(uint16_t checksum);
 	void sendChecksum();
 	bool sendCommand(uint8_t command, uint16_t bodyLength);
-	bool sendCommand(uint8_t command);
+	//bool sendCommand(uint8_t command);
 	uint8_t getStatusCode();
 	bool getAcknowledgement();
 	void waitForPrinterReady();
@@ -66,8 +68,8 @@ public:
 	uint8_t endData();
 	bool endPage();
 	bool sendPrint(uint8_t leftMargin, uint8_t rightMargin, uint8_t palette, uint8_t exposure);
-	bool sendPrint(uint8_t leftMargin, uint8_t rightMargin);
-	bool sendPrint();
+	//bool sendPrint(uint8_t leftMargin, uint8_t rightMargin);
+	//bool sendPrint();
 	void printBlank(uint8_t numBands);
 	void clearBuffer();
 	bool flushBuffer();
